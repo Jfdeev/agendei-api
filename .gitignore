@@ -1,0 +1,115 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Diretórios do sistema operacional
+.DS_Store
+Thumbs.db
+*.swp
+
+# Dependências
+node_modules/
+.pnp/
+.pnp.js
+
+# Builds e arquivos temporários
+dist/
+build/
+tmp/
+out/
+*.tmp
+*.cache
+.cache/
+*.lock
+coverage/
+.vscode/
+.idea/
+
+# Configurações do sistema operacional/IDE
+*.sublime-workspace
+*.sublime-project
+*.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.iml
+*.log
+*.swp
+
+# Configurações do Yarn/PM2/npm
+.yarn/
+.yarnrc
+.pnpm-debug.log
+npm-debug.log
+.yarn-integrity
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Expo/React Native
+.expo/
+.expo-shared/
+*.expo
+
+# Imagens geradas
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.webp
+
+# Teste
+coverage/
+test-results/
+
+# Banco de dados
+*.sqlite
+*.db
+*.db-journal
+
+# Outros arquivos ignorados
+*.env
+*.bak
+*.old
+
+# Lockfiles alternativos (somente manter o do gerenciador de dependências usado)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.Trash-*/
+
+# Arquivos gerados pelo Editor (Emacs, Vim, etc.)
+*~
+*.swp
+*.swo
+
+# Arquivos temporários de deployment
+*.log*
+*.bak
+*.orig
+*.rej
+
+# Configurações personalizadas do projeto (descomente e adicione conforme necessário)
+# .env
+# .custom-config/
+node_modules
