@@ -29,8 +29,28 @@ async function Inserir(name, specialty, icon) {
 
     const doctor = await query(sql, [name, specialty, icon]);
 
-    return doctor;
+    return doctor[0];
 
 }
 
-export default { Listar, Inserir };
+async function Editar(id_doctor, name, specialty, icon) {
+    
+    //simulando dados do banco
+    let sql = `UPDATE doctors SET name = ?, specialty = ?, icon = ? WHERE id_doctor = ?`;
+
+    await query(sql, [name, specialty, icon, id_doctor]);
+
+    return { id_doctor };
+}
+
+async function Deletar(id_doctor) {
+    
+    //simulando dados do banco
+    let sql = `DELETE FROM doctors WHERE id_doctor = ?`;
+
+    await query(sql, [id_doctor]);
+
+    return { id_doctor };
+}
+
+export default { Listar, Inserir, Editar, Deletar };

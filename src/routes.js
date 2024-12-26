@@ -7,6 +7,11 @@ const router = Router();
 
 router.get("/doctors", controllerDoctors.Listar);
 router.post("/doctors", controllerDoctors.Inserir);
+router.put("/doctors/:id_doctor", controllerDoctors.Editar);
+router.delete("/doctors/:id_doctor", controllerDoctors.Deletar);
+
+
+
 
 
 //Users

@@ -13,4 +13,14 @@ async function Inserir(name, specialty, icon) {
     return doctor;
 }
 
-export default { Listar, Inserir };
+async function Editar(id_doctor ,name, specialty, icon) {
+    const doctor = await repoDoctor.Editar(id_doctor, name, specialty, icon);
+    return doctor;
+}
+
+async function Deletar(id_doctor) {
+    const doctor = await repoDoctor.Deletar(id_doctor);
+    return doctor;
+}
+
+export default { Listar, Inserir, Editar, Deletar };
