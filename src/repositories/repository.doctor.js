@@ -3,14 +3,34 @@
 import { query } from '../database/sqlite.js';
 
 
-async function Listar() {
+async function Listar(name) {
+
+    let filter = [];
 
     //simulando dados do banco
-    const sql = `SELECT * FROM doctors order by name`;
+    let sql = `SELECT * FROM doctors `;
 
-    const doctors = await query(sql, []);
+    if (name) {
+        sql += `WHERE name like ? `;
+        filter.push('%' + name + '%');
+    }
+    sql += `order by name`;
+
+    const doctors = await query(sql, filter);
 
     return doctors;
 }
 
-export default { Listar };
+async function Inserir(name, specialty, icon) {
+    
+    //simulando dados do banco
+    let sql = `INSERT INTO doctors (name, specialty, icon) VALUES (?, ?, ?)
+    returning id_doctor`;
+
+    const doctor = await query(sql, [name, specialty, icon]);
+
+    return doctor;
+
+}
+
+export default { Listar, Inserir };
