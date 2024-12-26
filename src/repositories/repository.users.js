@@ -9,4 +9,16 @@ async function Inserir(name, email, password) {
     return user[0];
 }
 
-export default { Inserir };
+async function Login(email) {
+    let sql = `SELECT * FROM users WHERE email = ?`;
+
+    const user = await query(sql, [email]);
+
+    if (!user) {
+        throw new Error('User not found');
+    }
+
+    return user[0];
+}
+
+export default { Inserir, Login };

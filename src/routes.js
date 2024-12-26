@@ -14,6 +14,7 @@ router.delete("/doctors/:id_doctor", controllerDoctors.Deletar);
 
 //Users
 router.post("/users/register", controllerUsers.Inserir);
+router.post("/users/login", controllerUsers.Login);
 
 //Reservas
 
