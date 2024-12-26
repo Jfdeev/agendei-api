@@ -2,6 +2,7 @@
 
 import { Router } from "express";
 import controllerDoctors from "./controllers/controller.doctor.js";
+import controllerUsers from "./controllers/controller.users.js";
 
 const router = Router();
 
@@ -11,11 +12,8 @@ router.put("/doctors/:id_doctor", controllerDoctors.Editar);
 router.delete("/doctors/:id_doctor", controllerDoctors.Deletar);
 
 
-
-
-
 //Users
-
+router.post("/users/register", controllerUsers.Inserir);
 
 //Reservas
 
