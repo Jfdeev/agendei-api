@@ -1,11 +1,14 @@
 import repoUsers from '../repositories/repository.users.js';
 import bcrypt from 'bcrypt';
+import jwt from '../token.js';
+
 
 async function Inserir(name, email, password) {
 
     const hashPassword = await bcrypt.hash(password, 10);
-
     const user = await repoUsers.Inserir(name, email, hashPassword);
+
+    user.token = jwt.CreateToken(user.id_user);
 
     return user;
 }
@@ -24,10 +27,18 @@ async function Login(email, password) {
         }
         delete user.password;
 
+        user.token = jwt.CreateToken(user.id_user);
+
         return { success: true, user };
     } catch (error) {
         return { success: false, message: error.message };
     }
 }
 
-export default { Inserir, Login };
+async function Profile(id_user) {
+    const user = await repoUsers.Profile(id_user);
+
+    return user;
+}
+
+export default { Inserir, Login, Profile };

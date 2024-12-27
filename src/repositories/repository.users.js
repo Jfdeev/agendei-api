@@ -21,4 +21,13 @@ async function Login(email) {
     return user[0];
 }
 
-export default { Inserir, Login };
+async function Profile(id_user) {
+    let sql = `SELECT id_user, name, email FROM users WHERE id_user = ?`;
+
+    
+    const user = await query(sql, [id_user]);
+    
+    return user[0];
+}
+
+export default { Inserir, Login, Profile };

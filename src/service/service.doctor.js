@@ -23,4 +23,9 @@ async function Deletar(id_doctor) {
     return doctor;
 }
 
-export default { Listar, Inserir, Editar, Deletar };
+async function ListarServicos(id_doctor) {
+    const services = await repoDoctor.ListarServicos(id_doctor);
+    return services;
+}
+
+export default { Listar, Inserir, Editar, Deletar, ListarServicos };
