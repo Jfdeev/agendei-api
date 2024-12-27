@@ -7,7 +7,7 @@ import controllerAppoint from './controllers/controller.appointment.js';
 import jwt from "./token.js";
 
 const router = Router();
-
+//doctors
 router.get("/doctors", jwt.VerifyToken, controllerDoctors.Listar);
 router.post("/doctors", jwt.VerifyToken,controllerDoctors.Inserir);
 router.put("/doctors/:id_doctor", jwt.VerifyToken,controllerDoctors.Editar);
