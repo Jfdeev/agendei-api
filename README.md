@@ -55,7 +55,7 @@ AgendeiJS/
 
 3. Configure as variáveis de ambiente no arquivo `.env`:
    ```env
-   PORT=3000
+   PORT=3001
    JWT_SECRET=your_secret_key
    ```
 
@@ -69,7 +69,7 @@ AgendeiJS/
    npm start
    ```
 
-A API estará disponível em `http://localhost:3000`.
+A API estará disponível em `http://localhost:3001`.
 
 ## Rotas Principais
 
