@@ -23,13 +23,12 @@ AgendeiJS é uma API desenvolvida para gerenciar agendamentos de serviços em um
 ```
 AgendeiJS/
 ├── src/
-│   ├── controllers/       # Controladores para as rotas
 │   ├── database/          # Configurações do banco de dados SQLite
-│   ├── middlewares/       # Middlewares para validação e autenticação
-│   ├── models/            # Modelos para manipulação de dados
+│   ├── controllers/       # Controladores para as rotas
 │   ├── repositories/      # Lógica de acesso ao banco de dados
-│   ├── routes/            # Definição das rotas da API
 │   └── services/          # Lógica de negócio
+│ ├── routes.js            # Definição das rotas da API
+│ ├── token.js            # Definição de criação de token por usuario
 ├── tests/                 # Testes automatizados
 ├── .env                   # Variáveis de ambiente
 ├── package.json           # Gerenciador de dependências
