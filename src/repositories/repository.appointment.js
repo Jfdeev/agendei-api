@@ -32,4 +32,14 @@ async function Inserir(id_user, id_service, id_doctor, booking_date, booking_hou
     return appointment[0];
 }
 
-export default { Listar, Inserir };
+async function Deletar(id_user, id_appointment) {
+    
+    //simulando dados do banco
+    let sql = `DELETE FROM appointments WHERE id_appointment = ? AND id_user = ?`;
+
+    await query(sql, [id_appointment, id_user]);
+
+    return {id_appointment};
+}
+
+export default { Listar, Inserir, Deletar };

@@ -23,5 +23,6 @@ router.get("/users/profile", jwt.VerifyToken,controllerUsers.Profile);
 //Reservas
 router.get("/appointments", jwt.VerifyToken, controllerAppoint.ListarByUser);
 router.post("/appointments", jwt.VerifyToken, controllerAppoint.Inserir);
+router.delete("/appointments/:id_appointment", jwt.VerifyToken, controllerAppoint.Deletar);
 
 export default router;
